@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    m = 0
-    res = ""
+    t = 0
+    s = ""
     if a_dictionary:
-        for k, v in a_dictionary.items():
-            if v > m:
-                res = k
-                m = v
-        return res
+        for i, j in a_dictionary.items():
+            if j > t:
+                s = i
+                t = j
+        return s
     else:
         return None
