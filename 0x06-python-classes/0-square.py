@@ -3,5 +3,5 @@
 
 
 class Square:
-    """name of class square"""
+    """class name is square"""
     pass
