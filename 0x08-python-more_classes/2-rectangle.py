@@ -41,7 +41,8 @@ class Rectangle:
         return self.__height * self.__width
 
     def perimeter(self):
-        """ returns the rectangle perimeter
+        """
+            Returns perimeter of rectangle
 
         Return : (int) perimeter
         """
