@@ -6,8 +6,8 @@ class Node:
     """name of class node"""
 
     def __init__(self, data, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -17,7 +17,8 @@ class Node:
     def data(self, value):
         if type(value) != int:
             raise TypeError("data must be an integer")
-        self.__data = value
+        else:
+            self.__data = value
 
     @property
     def next_node(self):
@@ -27,7 +28,8 @@ class Node:
     def next_node(self, value):
         if value is not None and type(value) != Node:
             raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+        else:
+            self.__next_node = value
 
 """class SinglyLinkedList."""
 
