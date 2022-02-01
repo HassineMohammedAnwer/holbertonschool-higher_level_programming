@@ -3,9 +3,7 @@
 
 
 class Node:
-    """name of class node"""
-
-
+    """Node name of class"""
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -37,15 +35,13 @@ class Node:
 
 class SinglyLinkedList:
     """name of class singlylinkedlist"""
-
-
     def __init__(self):
         self.head = None
 
     def __str__(self):
         my_str = ""
         node = self.head
-        while node != None:
+        while node is not None:
             my_str += str(node.data)
             my_str += '\n'
             node = node.next_node
