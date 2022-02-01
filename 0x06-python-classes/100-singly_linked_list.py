@@ -5,6 +5,7 @@
 class Node:
     """name of class node"""
 
+
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -36,6 +37,7 @@ class Node:
 
 class SinglyLinkedList:
     """name of class singlylinkedlist"""
+
 
     def __init__(self):
         self.head = None
