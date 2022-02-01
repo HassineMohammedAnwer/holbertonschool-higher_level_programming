@@ -53,10 +53,12 @@ class Square:
             for j in range(0, self.__size):
                 print("#", end="")
             print()
+
     def __str__(self):
         new_str = ""
         if self.__size == 0:
-            return
+            new_str = '\n'
+            return new_str
 
         for i in range(0, self.__position[1]):
             new_str += '\n'
