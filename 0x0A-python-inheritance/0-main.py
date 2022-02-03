@@ -10,4 +10,4 @@ class MyClass2(object):
         pass
 print(lookup(MyClass1))
 print(lookup(MyClass2))
-print(lookup(str))
+print(lookup(list))
