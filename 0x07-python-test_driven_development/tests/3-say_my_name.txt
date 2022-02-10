@@ -12,7 +12,7 @@ Import the function:
 Now test it:
 
     >>> say_my_name("Anwer", "Hassine")
-    My name is Anwer Hassine 
+    My name is Anwer Hassine
 
     >>> say_my_name("Anwer")
     My name is Anwer 
