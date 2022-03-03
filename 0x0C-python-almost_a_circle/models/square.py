@@ -24,6 +24,7 @@ class Square(Rectangle):
                                                  self.y, self.width)
 
     def update(self, *args, **kwargs):
+        """ kljblkbkl"""
         i = 0
         if args:
             for arg in args:
