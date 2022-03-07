@@ -110,7 +110,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """dictionary"""
-        my_dict = dict(self.__dict__)
+        my_dict = dict(**self.__dict__)
         my_dict['id'] = self.id
         my_dict['width'] = self.width
         my_dict['height'] = self.height
