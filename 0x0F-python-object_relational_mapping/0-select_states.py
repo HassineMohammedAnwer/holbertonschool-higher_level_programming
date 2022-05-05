@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Usage: {:s} <username> <password> <database> """
 
 
 if __name__ == "__main__":
