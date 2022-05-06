@@ -20,7 +20,7 @@ if __name__ == "__main__":
         db=dbname,
         port=3306)
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' or 'n%'")
     states = cursor.fetchall()
     for row in states:
         print(row)
