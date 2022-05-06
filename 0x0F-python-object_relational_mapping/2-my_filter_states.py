@@ -21,7 +21,7 @@ if __name__ == "__main__":
         db=dbname,
         port=3306)
     cursor = database.cursor()
-    query = """SELECT * FROM states WHERE name = '{:s}'
+    query = """SELECT * FROM states WHERE name LIKE BINARY '{:s}'
             ORDER BY states.id ASC""".format(sys.argv[4])
     cursor.execute(query)
     states = cursor.fetchall()
