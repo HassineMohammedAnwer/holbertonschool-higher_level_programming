@@ -28,8 +28,8 @@ if __name__ == "__main__":
     cities = cursor.fetchall()
     i = 1
     for row in cities:
-        if i == len(cities):
-            print(row[0])
-        else:
+        if i != len(cities) and i != 0:
             print(row[0], end=", ")
+        else:
+            print(row[0])
         i = i + 1
