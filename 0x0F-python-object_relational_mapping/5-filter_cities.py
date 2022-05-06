@@ -30,6 +30,8 @@ if __name__ == "__main__":
     for row in cities:
         if i != len(cities) and i != 0:
             print(row[0], end=", ")
+        elif i == 0:
+            break
         else:
             print(row[0])
         i = i + 1
