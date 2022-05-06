@@ -3,37 +3,24 @@
 
 
 if __name__ == "__main__":
-    import sys
+    from sys import argv
     import MySQLdb
-    from sys import argv, exit
+    db = MySQLdb.connect(user=argv[1],
+                         passwd=argv[2],
+                         db=argv[3])
+    cur = db.cursor()
 
-    if len(argv) != 5:
-        print("Usage: {:s} <username> <password> <database>".format(argv[0]))
-        exit(99)
-
-    usrname = argv[1]
-    passwd = argv[2]
-    dbname = argv[3]
-
-    database = MySQLdb.Connect(
-        user=usrname,
-        passwd=passwd,
-        db=dbname,
-        port=3306)
-    cursor = database.cursor()
-    cursor.execute("SELECT cities.name FROM cities\
+    cur.execute("SELECT cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s ORDER BY cities.id",
-                (sys.argv[4], ))
-    cities = cursor.fetchall()
-    i = 1
-    if len(cities) == 0:
-        exit(99)
-    for row in cities:
-        if i != len(cities):
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+                (argv[4], ))
+    row = cur.fetchall()
+    i = 0
+    for woof in row:
+        if i != 0:
+            print(", ", end="")
+        print("%s" % woof, end="")
         i = i + 1
+    print("")
     cur.close()
     db.close()
