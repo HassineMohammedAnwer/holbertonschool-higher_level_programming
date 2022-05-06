@@ -20,7 +20,8 @@ if __name__ == "__main__":
         db=dbname,
         port=3306)
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' OR 'n%'")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cursor.fetchall()
     for row in states:
-        print(row)
+        if row[1].startswith("N"):
+            print(row)
