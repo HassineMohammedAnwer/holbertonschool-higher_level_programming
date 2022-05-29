@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-
-const myVar = 'x';
+const myVar = 'X';
 if (isNaN(process.argv[2])) {
   console.log('Missing size');
 } else {
