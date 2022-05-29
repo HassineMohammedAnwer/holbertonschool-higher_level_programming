@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""64646456464645984984"""
+"""urllib.request.urlopen(sys.argv[1]) as response"""
 
 import urllib.request
 import sys
