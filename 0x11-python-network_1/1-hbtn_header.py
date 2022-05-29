@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""
-urllib.request.urlopen(sys.argv[1]) as response"""
+"""fetches https://intranet.hbtn.io/status"""
+import urllib.request
+
+
 if __name__ == '__main__':
-    import urllib.request
-    import sys
-
-    with urllib.request.urlopen(sys.argv[1]) as response:
-        res = response.headers.get('X-Request-Id')
-        print(res)
-
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        print("Body response:")
+        html = response.read()
+        print("\t- type:", type(html))
+        print("\t- content:", html)
+        print("\t- utf8 content:", html.decode('utf-8'))
