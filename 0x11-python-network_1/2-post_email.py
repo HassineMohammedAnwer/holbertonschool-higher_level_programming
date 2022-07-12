@@ -5,7 +5,6 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    """mjk mk jm qaae dok"""
     url = argv[1]
     email = argv[2]
     data = parse.urlencode({'email': email})
