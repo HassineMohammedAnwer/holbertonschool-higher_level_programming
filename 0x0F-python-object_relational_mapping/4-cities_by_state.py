@@ -22,8 +22,10 @@ if __name__ == "__main__":
 
     cursor = database.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name\
-                    FROM states INNER JOIN cities ON\
-                    states.id = cities.state_id ORDER BY cities.id")
+                   FROM states INNER JOIN cities\
+                   states.id = cities.state_id ORDER BY cities.id ASC")
     cities = cursor.fetchall()
     for row in cities:
         print(row)
+    cursor.close()
+    database.close()
