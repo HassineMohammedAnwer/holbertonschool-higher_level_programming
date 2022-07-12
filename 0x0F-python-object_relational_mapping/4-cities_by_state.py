@@ -6,7 +6,7 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv, exit
 
-    if len(argv) != 5:
+    if len(argv) != 4:
         print("Usage: {:s} <username> <password> <database>".format(argv[0]))
         exit(99)
 
