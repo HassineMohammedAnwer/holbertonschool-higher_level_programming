@@ -17,8 +17,8 @@ if __name__ == '__main__':
         if jresponse == {}:
             print("No result")
         else:
-            ___id = resp['id']
-            ___name = resp['name']
+            ___id = jresponse['id']
+            ___name = jresponse['name']
             print("[{}] {}".format(___id, ___name))
     except Exception:
         print("Not a valid JSON")
