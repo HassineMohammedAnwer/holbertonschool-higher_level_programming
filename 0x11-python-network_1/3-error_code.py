@@ -1,8 +1,7 @@
-
 #!/usr/bin/python3
 """urllib.request.urlopen(sys.argv[1]) as response"""
-from urllib import request, parse
-from urllib.error import URLError, HTTPError
+from urllib import request
+from urllib.error import HTTPError
 from sys import argv
 
 
