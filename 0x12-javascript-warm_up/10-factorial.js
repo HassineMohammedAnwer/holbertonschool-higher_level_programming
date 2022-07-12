@@ -6,7 +6,7 @@ if (isNaN(process.argv[2]) || (process.argv[2] == 0)) {
   return;
 } else {
   for (let i = 1; i <= parseInt(process.argv[2]); i++) {
-  res = res * i;
+    res = res * i;
   }
 }
 console.log(res);
