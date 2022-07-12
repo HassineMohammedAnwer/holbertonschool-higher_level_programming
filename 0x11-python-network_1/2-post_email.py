@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""
-urllib.request.urlopen(sys.argv[1]) as response"""
+"""urllib.request.urlopen(sys.argv[1]) as response"""
+
 if __name__ == '__main__':
     from urllib import request, parse
     from sys import argv
