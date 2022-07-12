@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """urllib.request.urlopen(sys.argv[1]) as response"""
+from urllib import request, parse
+from sys import argv
+
 
 if __name__ == '__main__':
-    from urllib import request, parse
-    from sys import argv
-
     url = argv[1]
     email = argv[2]
     data = parse.urlencode({'email': email})
