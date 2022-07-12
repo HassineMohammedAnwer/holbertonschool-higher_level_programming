@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
-import urllib.request
-
+"""fetches the url as arg"""
+import urllib.request as req
+from sys import argv
 
 if __name__ == '__main__':
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        print("Body response:")
-        html = response.read()
-        print("\t- type:", type(html))
-        print("\t- content:", html)
-        print("\t- utf8 content:", html.decode('utf-8'))
+    with req.urlopen(argv[1]) as response:
+        print(response.headers.get('X-Request-Id'))
