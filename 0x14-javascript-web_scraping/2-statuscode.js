@@ -1,9 +1,8 @@
 #!/usr/bin/node
-const axios = require('axios');
+const axios = require('axios').default;
 
-// Make a request
 axios.get(process.argv[2])
-  .then(function (response) {
-// handle success
+  .then(response => {
+    // Handle response
     console.log('code:', response.status);
-});
+  })
