@@ -1,31 +1,22 @@
 #!/usr/bin/python3
-""" Usage: {:s} <username> <password> <database> """
+"""lists all states from the database hbtn_0e_0_usa"""
 
+if __name__ == '__main__':
 
-if __name__ == "__main__":
     import MySQLdb
-    from sys import argv, exit
+    import sys
 
-    if len(argv) != 4:
-        print("Usage: {:s} <username> <password> <database>".format(argv[0]))
-        exit(99)
+    db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3])
 
-    usrname = argv[1]
-    passwd = argv[2]
-    dbname = argv[3]
+    cursor = db.cursor()
+    cursor.execute("""SELECT  cities.id, cities.name, states.name
+                FROM cities INNER JOIN states ON cities.state_id=states.id""")
 
-    database = MySQLdb.Connect(
-        user=usrname,
-        passwd=passwd,
-        db=dbname,
-        port=3306)
-
-    cursor = database.cursor()
-    cursor.execute("SELECT cities.id, cities.name, states.name\
-                   FROM states INNER JOIN cities\
-                   states.id = cities.state_id ORDER BY cities.id ASC")
-    cities = cursor.fetchall()
-    for row in cities:
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
-    cursor.close()
-    database.close()
